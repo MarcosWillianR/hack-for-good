@@ -1,16 +1,13 @@
-import React, { useRef, useEffect, useState, useMemo } from 'react';
-import ReactInputMask from 'react-input-mask';
-
-import { Form } from '@unform/web';
 import { Scope } from '@unform/core';
+import { Form } from '@unform/web';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import ReactInputMask from 'react-input-mask';
 import Input from '~/components/Form/Input';
-
 import buscaCep from '~/services/cep';
-
-import validator from './validator';
-import { Container, InputWrapper, ErrorMessage } from './styles';
-
+import firebase from '~/services/firebase';
 import { removeNonNumeric } from '~/utils/formatter';
+import { Container, ErrorMessage, InputWrapper } from './styles';
+import validator from './validator';
 
 export default function Company() {
   const formRef = useRef(null);
@@ -43,6 +40,15 @@ export default function Company() {
       cnpj: removeNonNumeric(data.cnpj),
       cep: cleanedCep,
     };
+
+    try {
+      await firebase
+        .auth()
+        .createUserWithEmailAndPassword('teste@gmail.com', '123456');
+    } catch (err) {
+      console.log(err.code);
+      console.log(err.message);
+    }
 
     await validator(payload, formRef);
 
