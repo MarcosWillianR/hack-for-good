@@ -12,3 +12,7 @@ export const Container = styled.div`
     flex-direction: column;
   }
 `;
+
+export const InputWrapper = styled.div``;
+
+export const ErrorMessage = styled.span``;

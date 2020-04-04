@@ -19,11 +19,7 @@ export default function Company() {
   const [cepInvalid, setcepInvalid] = useState(false);
   const [cepError, setCepError] = useState('');
 
-  const [cnpj, setCnpj] = useState('');
-  const [cnpjError, setCnpjError] = useState('');
-
   const cleanedCep = useMemo(() => removeNonNumeric(cep), [cep]);
-  const cleanedCnpj = useMemo(() => removeNonNumeric(cnpj), [cnpj]);
 
   useEffect(() => {
     async function getCep() {
@@ -43,20 +39,12 @@ export default function Company() {
   async function handleSubmit(data, { reset }) {
     /** Dados do formulário para enviar para o backend */
     const payload = {
-      cnpj: cleanedCnpj,
-      cep: cleanedCep,
       ...data,
+      cnpj: removeNonNumeric(data.cnpj),
+      cep: cleanedCep,
     };
 
     await validator(payload, formRef);
-
-    const cnpjHasError = formRef.current.getFieldError('cnpj');
-
-    if (cnpjHasError) {
-      setCnpjError(cnpjHasError);
-    } else {
-      setCnpjError('');
-    }
 
     const cepHasError = formRef.current.getFieldError('cep');
 
@@ -68,7 +56,6 @@ export default function Company() {
 
     reset();
     setCep('');
-    setCnpj('');
   }
 
   return (
@@ -78,18 +65,11 @@ export default function Company() {
         <Input type="email" name="email" placeholder="E-mail" />
         <Input name="login" placeholder="Login" />
         <Input type="password" name="password" placeholder="Senha" />
-
-        <InputWrapper>
-          <ReactInputMask
-            name="cnpj"
-            placeholder="Informe seu CNPJ"
-            mask="99.999.999/9999-99"
-            value={cnpj}
-            onChange={(e) => setCnpj(e.target.value)}
-          />
-
-          {cnpjError && <ErrorMessage>{cnpjError}</ErrorMessage>}
-        </InputWrapper>
+        <Input
+          name="cnpj"
+          placeholder="Informe seu CNPJ"
+          mask="99.999.999/9999-99"
+        />
 
         <InputWrapper>
           <ReactInputMask

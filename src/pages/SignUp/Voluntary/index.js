@@ -19,11 +19,7 @@ export default function Voluntary() {
   const [cepInvalid, setcepInvalid] = useState(false);
   const [cepError, setCepError] = useState('');
 
-  const [cpf, setCpf] = useState('');
-  const [cpfError, setCpfError] = useState('');
-
   const cleanedCep = useMemo(() => removeNonNumeric(cep), [cep]);
-  const cleanedCpf = useMemo(() => removeNonNumeric(cpf), [cpf]);
 
   useEffect(() => {
     async function getCep() {
@@ -43,20 +39,12 @@ export default function Voluntary() {
   async function handleSubmit(data, { reset }) {
     /** Dados do formulário para enviar para o backend */
     const payload = {
-      cpf: cleanedCpf,
-      cep: cleanedCep,
       ...data,
+      cep: cleanedCep,
+      cpf: removeNonNumeric(data.cpf),
     };
 
     await validator(payload, formRef);
-
-    const cpfHasError = formRef.current.getFieldError('cpf');
-
-    if (cpfHasError) {
-      setCpfError(cpfHasError);
-    } else {
-      setCpfError('');
-    }
 
     const cepHasError = formRef.current.getFieldError('cep');
 
@@ -68,7 +56,6 @@ export default function Voluntary() {
 
     reset();
     setCep('');
-    setCpf('');
   }
 
   return (
@@ -78,18 +65,7 @@ export default function Voluntary() {
         <Input type="email" name="email" placeholder="seu e-mail" />
         <Input name="login" placeholder="Login" />
         <Input type="password" name="password" placeholder="Senha" />
-
-        <InputWrapper>
-          <ReactInputMask
-            name="cpf"
-            placeholder="Informe seu CPF"
-            mask="999.999.999-99"
-            value={cpf}
-            onChange={(e) => setCpf(e.target.value)}
-          />
-
-          {cpfError && <ErrorMessage>{cpfError}</ErrorMessage>}
-        </InputWrapper>
+        <Input name="cpf" placeholder="Informe seu CPF" mask="999.999.999-99" />
 
         <InputWrapper>
           <ReactInputMask
