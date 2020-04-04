@@ -2,6 +2,15 @@ import React from 'react';
 
 import './config/ReactotronConfig';
 
+import Routes from './routes';
+
+import GlobalStyle from './styles/global';
+
 export default function App() {
-  return <h1>Teste</h1>;
+  return (
+    <>
+      <GlobalStyle />
+      <Routes />
+    </>
+  );
 }
