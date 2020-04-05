@@ -7,7 +7,8 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 12px;
+  background: #f4f4f4;
+  padding: 0 12px;
 
   form {
     width: 100%;
@@ -25,7 +26,7 @@ export const Container = styled.div`
 
     padding: 60px;
 
-    span {
+    strong {
       text-align: center;
       margin-bottom: 42px;
 
@@ -41,17 +42,14 @@ export const Container = styled.div`
       box-shadow: 0 3px 16px rgba(0, 0, 0, 0.16);
       border: 0;
 
+      margin-bottom: 22px;
+
       &::placeholder {
         font-weight: bold;
       }
     }
 
-    input[type='email'] {
-      margin-bottom: 42px;
-    }
-
     a {
-      margin-top: 21px;
       align-self: flex-end;
       color: #464646;
     }
