@@ -1,11 +1,6 @@
 import * as Yup from 'yup';
 
 export default async function validator(data, formRef) {
-  const dinamicField = data.cnpj ? 'cnpj' : 'cpf';
-  const dinamicMessage =
-    dinamicField === 'cnpj'
-      ? 'Informe o CNPJ da sua empresa'
-      : 'Informe o seu CPF';
   try {
     const schema = Yup.object().shape({
       company: Yup.string().required('O nome é obrigatório'),
@@ -18,9 +13,9 @@ export default async function validator(data, formRef) {
       password: Yup.string()
         .min(6, 'A senha é muito curta')
         .required('A senha é obrigatória'),
-      [dinamicField]: Yup.string()
+      cnpj: Yup.string()
         .matches(/^[0-9]*$/, 'Formato inválido')
-        .required(dinamicMessage),
+        .required('Informe o CNPJ da sua empresa'),
       cep: Yup.string()
         .matches(/^[0-9]*$/, 'Formato inválido')
         .required('Informe o CEP'),
