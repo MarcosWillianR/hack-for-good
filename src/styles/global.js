@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
 
   * {
     margin: 0;
@@ -18,11 +19,11 @@ export default createGlobalStyle`
   }
 
   body {
-    -webkit-font-smoothing: antialiased !important;
+    -webkit-font-smoothing: antialiased;
   }
 
   body, input, button {
-    font-family: sans-serif;
+    font: 14px 'Lato', sans-serif;
   }
 
   a {

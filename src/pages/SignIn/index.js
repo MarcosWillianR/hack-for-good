@@ -1,10 +1,11 @@
 import React, { useRef } from 'react';
-
 import { Form } from '@unform/web';
+import { Link } from 'react-router-dom';
+
 import Input from '~/components/Form/Input';
 
 import validator from './validator';
-import { Container } from './styles';
+import { Container, RegisterText } from './styles';
 
 export default function Company() {
   const formRef = useRef(null);
@@ -18,10 +19,18 @@ export default function Company() {
   return (
     <Container>
       <Form ref={formRef} onSubmit={handleSubmit}>
-        <Input name="login" placeholder="Login" />
-        <Input type="password" name="password" placeholder="Senha" />
+        <span>LOGO</span>
+        <Input type="email" name="email" placeholder="e-mail" />
+        <Input type="password" name="password" placeholder="senha" />
 
-        <button type="submit">Enviar</button>
+        <Link to="/">Esqueci minha senha</Link>
+
+        <button type="submit">Entrar</button>
+
+        <RegisterText>
+          Ainda não é voluntário?
+          <Link to="/signup">Cadastre-se</Link>
+        </RegisterText>
       </Form>
     </Container>
   );

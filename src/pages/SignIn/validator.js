@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 export default async function validator(data, formRef) {
   try {
     const schema = Yup.object().shape({
-      login: Yup.string().required('O login é obrigatório'),
+      email: Yup.string().required('O e-mail é obrigatório'),
       password: Yup.string().required('A senha é obrigatória'),
     });
 
