@@ -19,7 +19,7 @@ export default function Company() {
   return (
     <Container>
       <Form ref={formRef} onSubmit={handleSubmit}>
-        <span>LOGO</span>
+        <strong>LOGO</strong>
         <Input type="email" name="email" placeholder="e-mail" />
         <Input type="password" name="password" placeholder="senha" />
 
