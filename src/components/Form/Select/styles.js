@@ -1,5 +1,22 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import ReactSelect from 'react-select';
+
+export const Container = styled.div`
+  ${(props) =>
+    props.className === 'input__50'
+      ? css`
+          display: inline-block;
+          @media screen and (max-width: 765px) {
+            display: block;
+            margin: 22px 0 !important;
+          }
+        `
+      : css`
+          display: block;
+        `}
+
+  margin: 12px 0;
+`;
 
 export const InputSelect = styled(ReactSelect)`
   width: 100%;
@@ -23,4 +40,12 @@ export const InputSelect = styled(ReactSelect)`
   svg {
     color: #333;
   }
+`;
+
+export const ErrorMessage = styled.span`
+  color: #ff2626;
+  display: block;
+  font-size: 14px !important;
+
+  margin: 12px 0 12px 12px;
 `;
