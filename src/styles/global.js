@@ -5,8 +5,6 @@ import 'video-react/dist/video-react.css';
 import 'react-datepicker/dist/react-datepicker.css';
 
 export default createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
-
   * {
     margin: 0;
     padding: 0;
