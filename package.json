@@ -9,11 +9,13 @@
     "@unform/core": "^2.0.0",
     "@unform/web": "^2.0.0",
     "axios": "^0.19.2",
+    "date-fns": "^2.11.1",
     "dotenv": "^8.2.0",
     "firebase": "^7.13.2",
     "polished": "^3.5.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
+    "react-datepicker": "^2.14.1",
     "react-dom": "^16.13.1",
     "react-input-mask": "^3.0.0-alpha.2",
     "react-perfect-scrollbar": "^1.5.8",
@@ -22,6 +24,7 @@
     "react-select": "^3.1.0",
     "reactotron-react-js": "^3.3.7",
     "styled-components": "^5.0.1",
+    "video-react": "^0.14.1",
     "yup": "^0.28.3"
   },
   "scripts": {
