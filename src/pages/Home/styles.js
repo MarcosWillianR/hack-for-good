@@ -74,7 +74,6 @@ export const FooterWrapper = styled.div`
     font-size: 32px;
     font-weight: 400;
     color: #fed308;
-    text-transform: uppercase;
   }
 `;
 

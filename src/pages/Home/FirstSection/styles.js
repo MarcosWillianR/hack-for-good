@@ -138,6 +138,10 @@ export const SusInformationContent = styled.div`
         margin-bottom: 12px;
       }
 
+      a {
+        color: #464646;
+      }
+
       p {
         margin-bottom: 22px;
         max-width: 400px;

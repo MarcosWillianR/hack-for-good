@@ -56,7 +56,7 @@ export default function Home() {
       <Footer>
         <Wrapper>
           <FooterWrapper>
-            <h2>Logo</h2>
+            <h2>Patrocinadores</h2>
 
             <HelpWrapper>
               <Link to="/">Sobre</Link>
