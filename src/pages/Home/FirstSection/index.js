@@ -24,7 +24,7 @@ export default function FirstSection() {
               A <strong>maneira</strong> mais fácil de ajudar
             </h1>
 
-            <p>Hospitais a enfrentar a COVID-19.</p>
+            <p>Hospitais a enfrentar o COVID-19.</p>
 
             <Link to="/signup">Cadastrar</Link>
           </RegisterContent>
