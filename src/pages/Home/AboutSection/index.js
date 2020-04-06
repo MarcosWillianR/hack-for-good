@@ -18,7 +18,7 @@ export default function AboutSection() {
     {
       title: 'Solução',
       description:
-        'Captação de voluntariado para os hospitais e de equipamentos de proteção individual, por meio de doações de pessoas físicas e jurídicas. Nesse sentido, viabilizamos a comunicação entre empresas para estabelecimento de parcerias, de forma que eles possam contribuir de forma individual em cada etapa da cadeia produtiva dos EPI’s, colaborando para o bem estar coletivo e valorização de suas marcas, com custos divididos.',
+        'Conectar pessoas e empresas com o objetivo de captar recursos para os hospitais da rede pública de saúde.',
     },
   ];
 

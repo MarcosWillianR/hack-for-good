@@ -18,7 +18,7 @@ export default function HeaderComponent() {
     <Header>
       <Wrapper>
         <HeaderWrapper>
-          <span>Logo</span>
+          <span>IRETI</span>
 
           <Sessions>
             <Link to="/teste">Quem somos</Link>

@@ -13,6 +13,8 @@ export default function Company() {
   async function handleSubmit(data, { reset }) {
     await validator(data, formRef);
 
+    localStorage.setItem('login', JSON.stringify({ login: true }));
+
     reset();
   }
 

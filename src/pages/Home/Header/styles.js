@@ -17,9 +17,11 @@ export const HeaderWrapper = styled.div`
   justify-content: space-between;
 
   span {
-    font-size: 38px;
-    font-weight: 300;
-    text-transform: uppercase;
+    font-size: 22px;
+    line-height: 1.4;
+    font-weight: bold;
+    padding: 8px 12px;
+    border: 2px solid #000;
   }
 `;
 
