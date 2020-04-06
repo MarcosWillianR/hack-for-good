@@ -14,10 +14,10 @@ export default async function buscaCep(cep) {
       logradouro: street,
       bairro: neighborhood,
       localidade: city,
-      uf,
+      uf: state,
     } = response.data;
 
-    const address = { street, neighborhood, city, uf };
+    const address = { street, neighborhood, city, state };
 
     return address;
   } catch (err) {

@@ -45,7 +45,7 @@ export default function Home() {
 
           <InputWrapper>
             <Input type="email" name="email" placeholder="E-mail" />
-            <Date name="date" />
+            <Date name="date" placeholderText="Escolha a data" />
           </InputWrapper>
         </FormComponent>
 

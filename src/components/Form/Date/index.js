@@ -33,7 +33,6 @@ const DatePicker = ({ name, ...rest }) => {
       todayButton="Hoje"
       minDate={new Date()}
       showDisabledMonthNavigation
-      placeholderText="Escolha a data"
       dateFormat="dd'/'MM'/'yyyy"
       {...rest}
     />

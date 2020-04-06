@@ -74,8 +74,6 @@ export const RegisterContent = styled.div`
 
   a {
     display: block;
-    margin-top: 22px;
-
     width: 100%;
     max-width: 180px;
     border-radius: 50px;
