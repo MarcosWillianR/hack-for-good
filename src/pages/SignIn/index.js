@@ -2,6 +2,9 @@ import React, { useRef } from 'react';
 import { Form } from '@unform/web';
 import { Link } from 'react-router-dom';
 
+import { useDispatch } from 'react-redux';
+import { SignIn } from '~/store/modules/auth/actions';
+
 import Input from '~/components/Form/Input';
 
 import validator from './validator';
@@ -10,10 +13,14 @@ import { Container, RegisterText } from './styles';
 export default function Company() {
   const formRef = useRef(null);
 
+  const dispatch = useDispatch();
+
   async function handleSubmit(data, { reset }) {
     await validator(data, formRef);
 
-    localStorage.setItem('login', JSON.stringify({ login: true }));
+    if (!Object.keys(formRef.current.getErrors()).length) {
+      dispatch(SignIn());
+    }
 
     reset();
   }
@@ -21,7 +28,7 @@ export default function Company() {
   return (
     <Container>
       <Form ref={formRef} onSubmit={handleSubmit}>
-        <strong>LOGO</strong>
+        <strong>IRETI</strong>
         <Input type="email" name="email" placeholder="e-mail" />
         <Input type="password" name="password" placeholder="senha" />
 

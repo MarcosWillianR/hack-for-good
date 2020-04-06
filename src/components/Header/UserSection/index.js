@@ -1,6 +1,10 @@
 import React from 'react';
 import InputSearch from 'react-search';
 import { MdSearch, MdForum, MdNotifications } from 'react-icons/md';
+
+import { useDispatch } from 'react-redux';
+import { SignOut } from '~/store/modules/auth/actions';
+
 import { Container, SearchInputWrapper, InputSelect, UserInfo } from './styles';
 
 const visionOption = [
@@ -25,9 +29,11 @@ const items = [
 ];
 
 export default function UserSection() {
+  const dispatch = useDispatch();
+
   function handleChange(e) {
     if (e.value === 'exit') {
-      localStorage.removeItem('login');
+      dispatch(SignOut());
     }
   }
 
@@ -68,7 +74,7 @@ export default function UserSection() {
         <InputSelect
           name="user-option"
           options={userOption}
-          placeholder="Marcos Willian"
+          placeholder="Usuário Master"
           onChange={handleChange}
           theme={(theme) => {
             return {
