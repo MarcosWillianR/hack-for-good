@@ -1,9 +1,22 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
+  ${(props) =>
+    props.className === 'input__50'
+      ? css`
+          display: inline-block;
+          @media screen and (max-width: 765px) {
+            display: block;
+          }
+        `
+      : css`
+          display: block;
+        `}
+
   input {
     width: 100%;
     max-width: ${(props) => props.styles?.width || '360'}px;
+
     height: ${(props) => props.styles?.height || '45'}px;
 
     border-radius: 150px;

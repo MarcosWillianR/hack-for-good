@@ -2,12 +2,22 @@ import { Scope } from '@unform/core';
 import { Form } from '@unform/web';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import ReactInputMask from 'react-input-mask';
-import Input from '~/components/Form/Input';
+import { Link } from 'react-router-dom';
 import buscaCep from '~/services/cep';
 import firebase from '~/services/firebase';
 import { removeNonNumeric } from '~/utils/formatter';
-import { Container, ErrorMessage, InputWrapper } from './styles';
+
+import {
+  Container,
+  ErrorMessage,
+  InputWrapper,
+  Title,
+  ButtonsWrapper,
+} from './styles';
 import validator from './validator';
+
+import Input from '~/components/Form/Input';
+import InputSelect from '~/components/Form/Select';
 
 export default function Company() {
   const formRef = useRef(null);
@@ -17,6 +27,11 @@ export default function Company() {
   const [cepError, setCepError] = useState('');
 
   const cleanedCep = useMemo(() => removeNonNumeric(cep), [cep]);
+
+  const options = [
+    { value: 'delivery', label: 'Entrega' },
+    { value: 'donations', label: 'Doações' },
+  ];
 
   useEffect(() => {
     async function getCep() {
@@ -67,14 +82,32 @@ export default function Company() {
   return (
     <Container>
       <Form ref={formRef} onSubmit={handleSubmit}>
-        <Input name="company" placeholder="Nome da empresa" />
-        <Input type="email" name="email" placeholder="E-mail" />
-        <Input name="login" placeholder="Login" />
-        <Input type="password" name="password" placeholder="Senha" />
+        <Title>Cadastro de Empresa</Title>
+
+        <Input
+          name="social-reason"
+          placeholder="Razão Social"
+          className="input__100"
+        />
+
+        <Input
+          name="fantasy-name"
+          placeholder="Nome Fantasia"
+          className="input__100"
+        />
+
         <Input
           name="cnpj"
-          placeholder="Informe seu CNPJ"
+          placeholder="CNPJ"
           mask="99.999.999/9999-99"
+          className="input__50"
+          left="true"
+        />
+
+        <Input
+          name="economic-activity"
+          placeholder="Atividade econômica/profissão"
+          className="input__50"
         />
 
         <InputWrapper>
@@ -86,8 +119,18 @@ export default function Company() {
             onChange={(e) => setCep(e.target.value)}
           />
 
-          {cepError && <ErrorMessage>{cepError}</ErrorMessage>}
+          <p>
+            Não sabe o CEP?
+            <a
+              href="http://www.buscacep.correios.com.br/sistemas/buscacep/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Clique aqui
+            </a>
+          </p>
         </InputWrapper>
+        {cepError && <ErrorMessage>{cepError}</ErrorMessage>}
 
         <Scope path="address">
           <Input name="street" placeholder="Rua" disabled={!cepInvalid} />
@@ -95,17 +138,59 @@ export default function Company() {
             name="neighborhood"
             placeholder="Bairro"
             disabled={!cepInvalid}
+            className="input__50"
           />
-          <Input name="city" placeholder="Cidade" disabled={!cepInvalid} />
           <Input
-            name="uf"
-            placeholder="UF"
+            name="state"
+            placeholder="Estado"
             disabled={!cepInvalid}
             maxLength="2"
+            className="input__50"
           />
+          <Input
+            name="city"
+            placeholder="Cidade"
+            disabled={!cepInvalid}
+            className="input__50"
+          />
+          <Input name="country" placeholder="País" className="input__50" />
         </Scope>
 
-        <button type="submit">Enviar</button>
+        <Title>Contato da Empresa</Title>
+
+        <Input name="contact-name" placeholder="Nome" className="input__100" />
+
+        <Input
+          type="password"
+          name="password"
+          placeholder="Senha para logar no sistema"
+        />
+
+        <Input
+          name="email"
+          placeholder="E-mail para logar no sistema"
+          className="input__50"
+        />
+        <Input
+          name="fone"
+          placeholder="Celular"
+          className="input__50"
+          mask="(99) 9999-9999"
+        />
+
+        <Title>Como você pode ajudar?</Title>
+
+        <InputSelect
+          name="help-type"
+          options={options}
+          placeholder="Escolha alguma das opções"
+          styles={{ width: 500 }}
+        />
+
+        <ButtonsWrapper>
+          <Link to="/">Cancelar</Link>
+          <button type="submit">Cadastrar</button>
+        </ButtonsWrapper>
       </Form>
     </Container>
   );

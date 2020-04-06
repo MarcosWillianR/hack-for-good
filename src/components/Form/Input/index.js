@@ -18,7 +18,7 @@ export default function Input({ name, ...rest }) {
   }, [fieldName, registerField]);
 
   return (
-    <Container>
+    <Container className={rest.className}>
       <ReactInputMask ref={inputRef} defaultValue={defaultValue} {...rest} />
 
       {error && <ErrorMessage>{error}</ErrorMessage>}
