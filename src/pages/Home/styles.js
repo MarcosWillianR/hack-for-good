@@ -66,6 +66,10 @@ export const FooterWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
 
+  @media screen and (max-width: 1249px) {
+    padding: 32px;
+  }
+
   h2 {
     font-size: 32px;
     font-weight: 400;
