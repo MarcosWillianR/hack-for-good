@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { useField } from '@unform/core';
 
-import { InputSelect } from './styles';
+import { InputSelect, Container, ErrorMessage } from './styles';
 
 export default function Select({ name, ...rest }) {
   const selectRef = useRef(null);
@@ -28,23 +28,27 @@ export default function Select({ name, ...rest }) {
   }, [fieldName, registerField, rest.isMulti]);
 
   return (
-    <InputSelect
-      defaultValue={defaultValue}
-      ref={selectRef}
-      classNamePrefix="react-select"
-      {...rest}
-      theme={(theme) => {
-        return {
-          ...theme,
-          colors: {
-            ...theme.colors,
-            primary: '#fed308',
-            primary75: '#fed308',
-            primary50: '#fed308',
-            primary25: '#fed308',
-          },
-        };
-      }}
-    />
+    <Container className={rest.className}>
+      <InputSelect
+        defaultValue={defaultValue}
+        ref={selectRef}
+        classNamePrefix="react-select"
+        {...rest}
+        theme={(theme) => {
+          return {
+            ...theme,
+            colors: {
+              ...theme.colors,
+              primary: '#fed308',
+              primary75: '#fed308',
+              primary50: '#fed308',
+              primary25: '#fed308',
+            },
+          };
+        }}
+      />
+
+      {error && <ErrorMessage>{error}</ErrorMessage>}
+    </Container>
   );
 }
