@@ -7,6 +7,12 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
 
+  h1 {
+    font-weight: bold;
+    font-size: 42px;
+    color: #4d4d4d;
+  }
+
   ul {
     margin: 32px 0;
     width: 100%;
@@ -15,18 +21,25 @@ export const Container = styled.div`
 
     li {
       padding: 0 22px;
-      div {
+      text-align: center;
+      img {
         width: 100px;
         height: 100px;
         border-radius: 50px;
         background: #ccc;
+        margin-bottom: 22px;
+      }
 
-        margin: 0 auto 22px auto;
+      h2 {
+        text-align: center;
+        font-size: 18px;
+        margin: 10px 0;
+        color: #4d4d4d;
       }
 
       p {
         max-width: 320px;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 1.5;
         text-align: center;
       }

@@ -21,7 +21,7 @@ export default function FirstSection() {
         <Wrapper>
           <RegisterContent>
             <h1>
-              A <strong>maneira</strong> mais fácil de ajudar
+              A maneira mais <strong>fácil</strong> de ajudar
             </h1>
 
             <p>Hospitais a enfrentar o COVID-19.</p>
