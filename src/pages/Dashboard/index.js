@@ -17,6 +17,8 @@ import {
 import Statistics from '~/assets/Statistics.png';
 import Map from '~/assets/mapa-dashboard.svg';
 
+import VoluntariesAndFastDetails from './VoluntariesAndFastDetails';
+
 const regions = [
   { state: 'São Paulo', value: '29.193' },
   { state: 'Rio de Janeiro', value: '18.832' },
@@ -163,6 +165,8 @@ export default function Dashboard() {
           </BottomContent>
         </RegionContainer>
       </HospitalAndRegionContainer>
+
+      <VoluntariesAndFastDetails />
     </Container>
   );
 }

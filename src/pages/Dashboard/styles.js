@@ -8,6 +8,7 @@ export const Container = styled.div`
 export const OverViewContainer = styled.div`
   width: 100%;
   padding-right: 32px;
+  margin: 22px 0;
 
   h1 {
     margin-bottom: 32px;
@@ -51,7 +52,7 @@ export const BoxWrapper = styled.div`
 
 export const StatisticsContainer = styled.div`
   width: calc(100% - 32px);
-  margin: 12px 22px 12px 0;
+  margin: 22px 22px 22px 0;
   box-shadow: 0 3px 16px rgba(0, 0, 0, 0.16);
   padding-right: 32px;
 
@@ -62,14 +63,14 @@ export const StatisticsContainer = styled.div`
 
 export const HospitalAndRegionContainer = styled.div`
   width: calc(100% - 32px);
-  margin: 12px 22px 12px 0;
+  margin: 22px 22px 22px 0;
 
   display: flex;
 `;
 
 export const HospitalContainer = styled.div`
   box-shadow: 0 3px 16px rgba(0, 0, 0, 0.16);
-  flex: 1;
+  flex: 2;
   padding: 22px;
 
   background: #fff;
@@ -100,21 +101,29 @@ export const ItensDesc = styled.div`
 `;
 
 export const RegionContainer = styled.div`
+  flex: 1;
   box-shadow: 0 3px 16px rgba(0, 0, 0, 0.16);
   margin-left: 22px;
   padding: 22px;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   img {
+    max-width: 100%;
     margin: 32px 0;
   }
 `;
 
 export const TopContent = styled.div`
   display: flex;
+  justify-content: space-between;
+
   p {
     font-size: 16px;
     color: #666;
-    max-width: 180px;
+    max-width: 200px;
   }
 
   a {
@@ -151,3 +160,5 @@ export const BottomContent = styled.div`
     color: #666;
   }
 `;
+
+export const VoluntaryType = styled.p``;
