@@ -35,6 +35,12 @@ export const Sessions = styled.div`
       color: ${darken(0.3, '#464646')};
     }
   }
+
+  @media screen and (max-width: 765px) {
+    a {
+      display: none;
+    }
+  }
 `;
 
 export const LoginButton = styled.button`

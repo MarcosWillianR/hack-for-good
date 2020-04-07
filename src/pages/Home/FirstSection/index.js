@@ -9,6 +9,7 @@ import {
   RegisterContent,
   SusInformationContent,
   Wrapper,
+  WrapperRegister,
 } from './styles';
 
 const covidNews = [
@@ -50,7 +51,7 @@ export default function FirstSection() {
       <SusInformationBackground />
 
       <SectionContentWrapper>
-        <Wrapper>
+        <WrapperRegister>
           <RegisterContent>
             <h1>
               A maneira mais <strong>fácil</strong> de ajudar
@@ -60,7 +61,7 @@ export default function FirstSection() {
 
             <Link to="/signup">Cadastrar</Link>
           </RegisterContent>
-        </Wrapper>
+        </WrapperRegister>
 
         <Wrapper>
           <SusInformationContent>

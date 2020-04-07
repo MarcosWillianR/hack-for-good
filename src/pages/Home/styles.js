@@ -40,6 +40,19 @@ export const ContactSection = styled.div`
       background-color: ${darken(0.03, '#fff')};
     }
   }
+
+  @media screen and (max-width: 765px) {
+    h1,
+    button[type='submit'] {
+      margin-top: 22px;
+    }
+
+    padding: 30px 0;
+
+    h1 {
+      font-size: 32px;
+    }
+  }
 `;
 
 export const FormComponent = styled(Form)`
@@ -47,12 +60,21 @@ export const FormComponent = styled(Form)`
   max-width: 900px;
   margin: 0 auto;
   display: flex;
+
+  @media screen and (max-width: 765px) {
+    flex-direction: column;
+  }
 `;
 
 export const InputWrapper = styled.div`
   width: 100%;
   align-self: flex-end;
   position: relative;
+  margin: 0 22px;
+
+  @media screen and (max-width: 765px) {
+    margin: 0;
+  }
 `;
 
 export const Footer = styled.div`
@@ -75,6 +97,14 @@ export const FooterWrapper = styled.div`
     font-weight: 400;
     color: #fed308;
   }
+
+  @media screen and (max-width: 765px) {
+    flex-direction: column;
+    h2 {
+      margin-bottom: 22px;
+      font-size: 22px;
+    }
+  }
 `;
 
 export const HelpWrapper = styled.div`
@@ -85,6 +115,16 @@ export const HelpWrapper = styled.div`
     transition: color 0.2s;
     &:hover {
       color: #fed308;
+    }
+  }
+
+  @media screen and (max-width: 765px) {
+    a {
+      margin-left: 0;
+    }
+
+    a:nth-child(2) {
+      margin: 0 12px;
     }
   }
 `;

@@ -6,6 +6,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-wrap: wrap;
 
   h1 {
     font-weight: bold;
@@ -68,6 +69,25 @@ export const Container = styled.div`
 
     &:hover {
       background-color: ${darken(0.03, '#fed308')};
+    }
+  }
+
+  @media screen and (max-width: 765px) {
+    ul {
+      flex-direction: column;
+      align-items: center;
+
+      li {
+        margin-bottom: 22px;
+      }
+    }
+
+    a {
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: 32px;
     }
   }
 `;

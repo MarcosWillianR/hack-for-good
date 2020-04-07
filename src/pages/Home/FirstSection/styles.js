@@ -13,18 +13,30 @@ export const Container = styled.div`
   background: #000;
 
   position: relative;
+
+  @media screen and (max-width: 765px) {
+    max-height: 350px;
+  }
 `;
 
 export const RegisterBackground = styled.div`
   background: #f4f4f4;
   width: 50%;
   height: 100%;
+
+  @media screen and (max-width: 765px) {
+    width: 100%;
+  }
 `;
 
 export const SusInformationBackground = styled.div`
   background: #fff;
   width: 50%;
   height: 100%;
+
+  @media screen and (max-width: 765px) {
+    display: none;
+  }
 `;
 
 export const SectionContentWrapper = styled.div`
@@ -49,6 +61,21 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+export const WrapperRegister = styled.div`
+  width: 50%;
+  max-width: 50%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 765px) {
+    width: 100%;
+    max-width: 100%;
+  }
 `;
 
 export const RegisterContent = styled.div`
@@ -95,12 +122,26 @@ export const RegisterContent = styled.div`
       background-color: ${darken(0.03, '#fed308')};
     }
   }
+
+  @media screen and (max-width: 765px) {
+    h1 {
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+  }
 `;
 
 export const SusInformationContent = styled.div`
   width: 100%;
   align-self: flex-start;
   margin-top: 42px;
+
+  @media screen and (max-width: 765px) {
+    display: none;
+  }
 
   @media screen and (min-width: 1250px) {
     padding: 0 42px 0 42px;

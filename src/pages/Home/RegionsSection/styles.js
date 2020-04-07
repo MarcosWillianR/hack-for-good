@@ -9,6 +9,10 @@ export const Container = styled.div`
     padding: 60px 32px;
   }
 
+  @media screen and (max-width: 765px) {
+    padding: 30px 32px;
+  }
+
   background: #f4f4f4;
 `;
 
@@ -37,6 +41,16 @@ export const TextSection = styled.div`
     font-size: 18px;
     max-width: 500px;
     line-height: 1.5;
+  }
+
+  @media screen and (max-width: 765px) {
+    h1 {
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 16px;
+    }
   }
 `;
 

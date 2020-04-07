@@ -21,8 +21,8 @@ export default function HeaderComponent() {
           <span>IRETI</span>
 
           <Sessions>
-            <Link to="/teste">Quem somos</Link>
-            <Link to="/teste">Nosso Propósito</Link>
+            <Link to="/">Quem somos</Link>
+            <Link to="/">Nosso Propósito</Link>
 
             <LoginButton onClick={() => history.push('/login')}>
               Entrar
