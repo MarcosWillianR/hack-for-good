@@ -1,6 +1,7 @@
 import React from 'react';
 import InputSearch from 'react-search';
 import { MdSearch, MdForum, MdNotifications } from 'react-icons/md';
+import { useHistory } from 'react-router-dom';
 
 import { useDispatch } from 'react-redux';
 import { SignOut } from '~/store/modules/auth/actions';
@@ -30,11 +31,14 @@ const items = [
 
 export default function UserSection() {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   function handleChange(e) {
     if (e.value === 'exit') {
       dispatch(SignOut());
     }
+
+    history.push('/');
   }
 
   return (

@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Form } from '@unform/web';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import { useDispatch } from 'react-redux';
 import { SignIn } from '~/store/modules/auth/actions';
@@ -14,6 +14,7 @@ export default function Company() {
   const formRef = useRef(null);
 
   const dispatch = useDispatch();
+  const history = useHistory();
 
   async function handleSubmit(data, { reset }) {
     await validator(data, formRef);
@@ -21,6 +22,8 @@ export default function Company() {
     if (!Object.keys(formRef.current.getErrors()).length) {
       dispatch(SignIn());
     }
+
+    history.push('/dashboard');
 
     reset();
   }
