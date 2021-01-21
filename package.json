@@ -12,7 +12,7 @@
     "date-fns": "^2.11.1",
     "dotenv": "^8.2.0",
     "firebase": "^7.13.2",
-    "immer": "^6.0.3",
+    "immer": "^8.0.1",
     "polished": "^3.5.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
